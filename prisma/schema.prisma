@@ -19,10 +19,15 @@ model User {
   hash String
   firstName String?
   lastName String?
-
+  role Role @default(USER)
   bookmarks Bookmark[]
 
   @@map("users")
+}
+
+enum Role {
+  USER
+  ADMIN
 }
 
 model Bookmark {
